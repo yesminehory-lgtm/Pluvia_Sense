@@ -1,5 +1,5 @@
 "use strict";
-// AquaMind Flood Watch — zero-dependency Node backend (Node >= 18)
+// PLUVIA SENSE — zero-dependency Node backend (Node >= 18)
 const http = require("http"), fs = require("fs"), path = require("path"), crypto = require("crypto");
 const PORT = +process.env.PORT || 3000, DATA = process.env.DATA_DIR || path.join(__dirname, "data"), PUB = path.join(__dirname, "public");
 const OPS = process.env.OPS_TOKEN || crypto.randomBytes(6).toString("hex");   // decision-makers' access code
@@ -144,4 +144,4 @@ const server = http.createServer(async (req, res) => {
   } catch (e) { if (!res.headersSent) J(res, e.code === 413 ? 413 : e instanceof SyntaxError ? 400 : 500, { error: e.code === 413 ? e.message : e instanceof SyntaxError ? "Invalid JSON" : "Server error" }); }
 });
 loadWx(); setInterval(loadWx, 3e5); setInterval(tick, 2000);
-server.listen(PORT, () => console.log(`AquaMind Flood Watch on :${PORT}\n  Operations code : ${OPS}\n  Device key      : ${DEV}\n  (set OPS_TOKEN and DEVICE_KEY env vars to make these permanent)`));
+server.listen(PORT, () => console.log(`PLUVIA SENSE on :${PORT}\n  Operations code : ${OPS}\n  Device key      : ${DEV}\n  (set OPS_TOKEN and DEVICE_KEY env vars to make these permanent)`));
