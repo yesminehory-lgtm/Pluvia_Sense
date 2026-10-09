@@ -1,4 +1,4 @@
-# AquaMind Flood Watch — Greater Tunis
+# Pluvia Sense Greater Tunis
 
 Real-time pluvial flood watch: live 3D map, sensor ingestion, risk engine, report verification, decision-maker dashboard.
 Backend: Node >= 18, **no dependencies**. Frontend: one static page (MapLibre GL).
